@@ -1,0 +1,13 @@
+<mat-card class="div-center">
+    <mat-card-title>{{product.name}}</mat-card-title>
+    <mat-card-content>
+        <img src= "../../../assets/download.png" alt="mobile">
+    </mat-card-content>
+    <mat-card-actions>
+        <div>
+      <p>Price: ${{product.price}}</p></div>
+      <div>
+      <button mat-button (click)="addToCart()">Add to Cart</button>
+    </div>
+    </mat-card-actions>
+  </mat-card>

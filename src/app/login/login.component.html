@@ -1,0 +1,20 @@
+<form [formGroup]="loginForm" id="loginForm" 
+class="d-flex justify-content-center container" 
+style="align-items: center;min-height: 100vh;"
+(ngSubmit)="login()">
+
+    <mat-card>
+        <h3>E-Commerce Login</h3>
+        <span>{{errorMessage}}</span>
+        <mat-form-field class="example-full-width d-block" appearance="fill">
+            <mat-label>User Name</mat-label>
+            <input formControlName = "userName"  matInput placeholder="Ex. admin">
+        </mat-form-field>
+        <span *ngIf="loginForm.status === 'INVALID' && loginForm.controls['userName'].touched && loginForm.controls['userName'].status === 'INVALID'">Username is incorrect!!!</span>
+        <mat-form-field class="example-full-width d-block" appearance="fill">
+            <mat-label>Password</mat-label>
+            <input formControlName = "password" type="password" matInput>
+        </mat-form-field>
+        <button type="submit" mat-button > Login</button>
+    </mat-card>
+</form>
